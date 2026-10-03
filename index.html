@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>FREEZE Home Care Pack – حلول ذكية للتنظيم</title>
+
+    <!-- Google Fonts: Cairo (Arabic) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ----- RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-padding-top: env(safe-area-inset-top, 0px);
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #ffffff;
+            color: #1B4322;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body > * {
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ----- FULL-WIDTH IMAGES ----- */
+        .full-width-img {
+            width: 100%;
+            display: block;
+            margin: 0;
+            padding: 0;
+            height: auto;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, #EBF2FA 0%, #f5f8fc 100%);
+            padding: 40px 20px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: #ffffff;
+            clip-path: polygon(0 40%, 100% 20%, 100% 100%, 0 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            margin-bottom: 20px;
+        }
+
+        .brand {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            color: #1B4322;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: 34px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #1B4322;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #2B5A32;
+            font-weight: 500;
+            max-width: 600px;
+            margin: 0 auto 24px;
+            line-height: 1.5;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: #1B4322;
+            color: #ffffff;
+            padding: 14px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: background 0.3s, transform 0.15s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(27, 67, 34, 0.15);
+        }
+
+        .hero-cta:hover {
+            background: #0f2a18;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(27, 67, 34, 0.2);
+        }
+
+        .hero-cta:active {
+            transform: translateY(0);
+        }
+
+        /* ===== PROBLEM SECTION ===== */
+        .problem-section {
+            padding: 60px 20px;
+            background: #ffffff;
+        }
+
+        .problem-section h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1B4322;
+            text-align: center;
+            margin-bottom: 32px;
+            line-height: 1.3;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .problem-item {
+            padding: 0;
+        }
+
+        .problem-item h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1B4322;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .problem-item p {
+            font-size: 15px;
+            color: #4A5E55;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .problem-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+        }
+
+        /* ===== SOLUTION INTRO ===== */
+        .solution-intro {
+            background: #EBF2FA;
+            padding: 48px 20px;
+            text-align: center;
+            border-radius: 16px;
+            margin: 0 0 60px 0;
+        }
+
+        .solution-intro h2 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #1B4322;
+            margin-bottom: 12px;
+        }
+
+        .solution-intro p {
+            font-size: 16px;
+            color: #2B5A32;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ===== PRODUCT SHOWCASE ===== */
+        .product-showcase {
+            padding: 60px 20px;
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .product-showcase h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1B4322;
+            margin-bottom: 40px;
+        }
+
+        .product-image-container {
+            max-width: 500px;
+            margin: 0 auto 50px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(27, 67, 34, 0.08);
+        }
+
+        .product-image-container img {
+            width: 100%;
+            display: block;
+        }
+
+        /* ===== WHAT'S INSIDE ===== */
+        .whats-inside {
+            padding: 60px 20px;
+            background: #EBF2FA;
+        }
+
+        .whats-inside h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1B4322;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .items-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .item {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #d4e4f0;
+        }
+
+        .item h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1B4322;
+            margin-bottom: 6px;
+        }
+
+        .item p {
+            font-size: 14px;
+            color: #4A5E55;
+            line-height: 1.6;
+        }
+
+        /* ===== BENEFITS ===== */
+        .benefits {
+            padding: 60px 20px;
+            background: #ffffff;
+        }
+
+        .benefits h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1B4322;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 0;
+        }
+
+        .benefit-card {
+            padding: 0;
+        }
+
+        .benefit-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1B4322;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .benefit-card p {
+            font-size: 15px;
+            color: #4A5E55;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        /* ===== TRUST SECTION ===== */
+        .trust-section {
+            background: linear-gradient(135deg, #EBF2FA 0%, #f5f8fc 100%);
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 16px;
+            margin: 60px 0;
+        }
+
+        .trust-section h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1B4322;
+            margin-bottom: 20px;
+        }
+
+        .trust-items {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .trust-item {
+            padding: 12px 0;
+        }
+
+        .trust-item-value {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1B4322;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .trust-item-label {
+            font-size: 13px;
+            color: #4A5E55;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .trust-items {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== FAQ ACCORDION ===== */
+        .faq-section {
+            padding: 60px 20px;
+            background: #ffffff;
+        }
+
+        .faq-section h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1B4322;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #E0E8F0;
+            padding: 16px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1B4322;
+            transition: color 0.2s;
+            user-select: none;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: right;
+        }
+
+        .faq-question:hover {
+            color: #2B5A32;
+        }
+
+        .faq-question .toggle-icon {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+            color: #4A90B0;
+            flex-shrink: 0;
+        }
+
+        .faq-question .toggle-icon.open {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            color: #4A5E55;
+            font-size: 15px;
+            line-height: 1.7;
+            padding-right: 24px;
+        }
+
+        .faq-answer.open {
+            max-height: 400px;
+            padding: 16px 24px 0 0;
+        }
+
+        /* ===== PRICING SECTION ===== */
+        .pricing-section {
+            background: linear-gradient(135deg, #EBF2FA 0%, #f5f8fc 100%);
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 16px;
+            margin: 60px 0;
+        }
+
+        .price-display {
+            margin-bottom: 24px;
+        }
+
+        .price-label {
+            font-size: 14px;
+            color: #4A5E55;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .price-main {
+            font-size: 48px;
+            font-weight: 800;
+            color: #1B4322;
+            margin-bottom: 4px;
+        }
+
+        .price-sub {
+            font-size: 14px;
+            color: #4A5E55;
+            font-weight: 500;
+        }
+
+        .price-section p {
+            font-size: 15px;
+            color: #4A5E55;
+            margin-top: 12px;
+            line-height: 1.6;
+        }
+
+        /* ===== ORDER FORM ===== */
+        .form-section {
+            background: #ffffff;
+            padding: 50px 20px;
+            margin: 0 0 60px 0;
+        }
+
+        .form-section h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1B4322;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .form-section .subtitle {
+            text-align: center;
+            color: #4A5E55;
+            font-size: 15px;
+            margin-bottom: 32px;
+            font-weight: 500;
+        }
+
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 15px;
+            color: #1B4322;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 16px;
+            border: 1px solid #D4E4F0;
+            border-radius: 8px;
+            background: #ffffff;
+            color: #1B4322;
+            font-family: 'Cairo', sans-serif;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #1B4322;
+            box-shadow: 0 0 0 3px rgba(27, 67, 34, 0.1);
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231B4322' stroke-width='2'><polyline points='6 9 12 15 18 9'/></svg>");
+            background-repeat: no-repeat;
+            background-position: left 16px center;
+            background-size: 16px;
+            padding-right: 16px;
+        }
+
+        .form-group input.invalid,
+        .form-group select.invalid {
+            border-color: #d32f2f;
+            box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+        }
+
+        .field-error {
+            display: none;
+            color: #d32f2f;
+            font-size: 13px;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+
+        .field-error.show {
+            display: block;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: #1B4322;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.15s;
+            font-family: 'Cairo', sans-serif;
+            box-shadow: 0 4px 12px rgba(27, 67, 34, 0.15);
+            position: relative;
+            margin-top: 8px;
+        }
+
+        .submit-btn:hover {
+            background: #0f2a18;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(27, 67, 34, 0.2);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .submit-btn .spinner {
+            display: none;
+            width: 18px;
+            height: 18px;
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            border-top-color: #ffffff;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+
+        .submit-btn.loading .btn-text {
+            display: none;
+        }
+
+        .submit-btn.loading .spinner {
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .form-message {
+            display: none;
+            margin-top: 16px;
+            padding: 14px 16px;
+            border-radius: 8px;
+            font-size: 15px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .form-message.success {
+            display: block;
+            background: #E8F5E9;
+            color: #1B5E20;
+            border: 1px solid #81C784;
+        }
+
+        .form-message.error {
+            display: block;
+            background: #FFEBEE;
+            color: #B71C1C;
+            border: 1px solid #EF5350;
+        }
+
+        .form-message a {
+            color: inherit;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 13px;
+            color: #4A5E55;
+            margin-top: 14px;
+            font-weight: 500;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: #1B4322;
+            color: #E8F5E9;
+            padding: 50px 20px 30px;
+        }
+
+        .footer-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: #E8F5E9;
+            font-size: 15px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col p,
+        .footer-col a {
+            font-size: 14px;
+            color: #B5D5BD;
+            text-decoration: none;
+            display: block;
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .footer-col a:hover {
+            color: #E8F5E9;
+            text-decoration: underline;
+        }
+
+        .footer-brand {
+            font-size: 18px;
+            font-weight: 800;
+            color: #E8F5E9;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .footer-copy {
+            text-align: center;
+            border-top: 1px solid rgba(232, 245, 233, 0.2);
+            padding-top: 20px;
+            font-size: 13px;
+            color: #B5D5BD;
+        }
+
+        @media (max-width: 600px) {
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+        }
+
+        /* ===== STICKY CTA (mobile) ===== */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #1B4322;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            z-index: 998;
+            box-shadow: 0 -2px 12px rgba(27, 67, 34, 0.15);
+            padding-bottom: max(12px, env(safe-area-inset-bottom));
+        }
+
+        .sticky-cta.hidden {
+            display: none;
+        }
+
+        .sticky-price {
+            color: #E8F5E9;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .sticky-btn {
+            background: #FBB02D;
+            color: #1B4322;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-family: 'Cairo', sans-serif;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .sticky-btn:hover {
+            background: #FCBA3D;
+        }
+
+        .sticky-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 26px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .problem-section h2,
+            .whats-inside h2,
+            .benefits h2,
+            .faq-section h2 {
+                font-size: 22px;
+            }
+
+            .price-main {
+                font-size: 40px;
+            }
+
+            body {
+                padding-bottom: 70px;
+            }
+
+            .sticky-cta {
+                padding: 10px 14px;
+                padding-bottom: max(10px, env(safe-area-inset-bottom));
+            }
+        }
+    </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s) {
+            if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)
+        }(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1015324201353041');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1015324201353041&ev=PageView&noscript=1" />
+    </noscript>
+</head>
+
+<body>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="brand">FREEZE</div>
+                <h1>مساحتك الغالية<br />تستحق أحسن</h1>
+                <p>علب التفريغ الذكية + مضخة يد + أداة إزالة الوبر</p>
+                <a href="#order-form" class="hero-cta">أطلب الآن</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROBLEM ===== -->
+    <section class="problem-section">
+        <div class="container">
+            <h2>المشكلة اللي كايزة برأسك</h2>
+            <div class="problem-grid">
+                <div class="problem-item">
+                    <h3>🧥 حوايجك الشتوية والصيفية</h3>
+                    <p>تاكل الحيز والمساحة حتى وأنت مابغيتيش</p>
+                </div>
+                <div class="problem-item">
+                    <h3>📦 التنظيم مايشي</h3>
+                    <p>البلاكار عامرة والحوايج منتشرة في كل جهة</p>
+                </div>
+                <div class="problem-item">
+                    <h3>🧵 الوبر والغبار</h3>
+                    <p>تجمع على الملابس والأقمشة بسرعة</p>
+                </div>
+                <div class="problem-item">
+                    <h3>💨 المساحة مهدورة</h3>
+                    <p>الملابس منتفخة تاخد ضعف المساحة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOLUTION INTRO ===== -->
+    <section class="container">
+        <div class="solution-intro">
+            <h2>الحل اللي بغيتي</h2>
+            <p>FREEZE Home Care Pack يحتي على كل اللي تحتاجيه باش تنظمي دارك وتربحي المساحة</p>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCT SHOWCASE ===== -->
+    <section class="product-showcase">
+        <div class="container">
+            <h2>المنتج</h2>
+            <div class="product-image-container">
+                <img src="assets/homecare-hero.webp" alt="FREEZE Home Care Pack complete kit" />
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHAT'S INSIDE ===== -->
+    <section class="whats-inside">
+        <div class="container">
+            <h2>شنو اللي فداخل الصندوق</h2>
+            <div class="items-grid">
+                <div class="item">
+                    <h3>📦 5 علب تفريغ</h3>
+                    <p>مختلفة الأحجام باش تناسب كل حاجة — من الملابس الشتوية لحتى الوسائد والبطانيات</p>
+                </div>
+                <div class="item">
+                    <h3>💨 مضخة يد ذكية</h3>
+                    <p>سهلة الاستعمال، قوية، وتفرغ المساحة بسرعة بدون ما تحتاجي لأي كهرباء</p>
+                </div>
+                <div class="item">
+                    <h3>🧵 أداة إزالة الوبر</h3>
+                    <p>تنظف الملابس والأقمشة من الوبر والغبار بكل سهولة قبل ما تخزنيها</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BENEFITS ===== -->
+    <section class="benefits">
+        <div class="container">
+            <h2>شنو اللي بتربحي</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>✨ مساحة أكثر</h3>
+                    <p>الملابس المفرغة تاخد أقل من النص المساحة. المشانق تتحرر والبلاكار تصير عايدة</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>🏠 نظام منظم</h3>
+                    <p>كل حاجة في علبتها، موسمة وواضحة. التنظيم يصير سهل والدار تصير أجمل</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>🧥 حوايجك محمية</h3>
+                    <p>الملابس والأقمشة محمية من الغبار والوبر والرطوبة طول السنة</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>⏱️ وقت + جهد</h3>
+                    <p>بدل ما تقضي ساعات في التنظيم والترتيب، كل شيء يصير بسهولة وبسرعة</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRUST SECTION ===== -->
+    <section class="container">
+        <div class="trust-section">
+            <h2>الناس اللي جربوه</h2>
+            <div class="trust-items">
+                <div class="trust-item">
+                    <span class="trust-item-value">4.8★</span>
+                    <span class="trust-item-label">تقييم من العملاء</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-item-value">2000+</span>
+                    <span class="trust-item-label">عميل سعيان</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>أسئلة متكررة</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>شنو مدة التوصيل؟</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">التوصيل سريع بين 2 و 3 أيام عمل لجميع مدن المغرب. التوصيل مجاني وداخل في السعر.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>كيفاش نديت الفلوس؟</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">الدفع عند الاستلام. ما فيك ما تخايفي من حاجة. تخلصي الفلوس حين يوصلك المنتج.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>العلب متاعة تفريغ آمنة على الملابس؟</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">نعم، مع الزمن. المواد عالية الجودة آمنة على كل أنواع الملابس والأقمشة بدون ما تخدش أو تخرب الحوايج.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>المضخة صعيبة الاستعمال؟</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">لا بالمرة. سهلة جدا. ما فيك تحتاجي لقوة خاصة. حتى الديال يقدر يستعملها.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>شنو الضمان؟</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">في ضمان 6 أشهر على كل المنتج. إذا كايصة حاجة، نستبدلها بحرية بدون حتى سؤال.</div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>ممكن نرجع المنتج إذا مارضينا؟</span>
+                        <span class="toggle-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">نعم، ضمان 14 يوم. إذا مارضيتي، نرجع لك الفلوس بدون أي أسئلة.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section class="container">
+        <div class="pricing-section">
+            <h2>السعر</h2>
+            <div class="price-display">
+                <span class="price-label">كل ما تحتاجيه بـ</span>
+                <div class="price-main">229 MAD</div>
+                <span class="price-sub">التوصيل مجاني وداخل في السعر</span>
+            </div>
+            <p>كل حاجة تحتاجيها باش تنظمي دارك وتربحي المساحة بسعر عادل وشفاف</p>
+        </div>
+    </section>
+
+    <!-- ===== ORDER FORM ===== -->
+    <section class="form-section" id="order-form">
+        <div class="container">
+            <h2>📦 طلبك الآن</h2>
+            <p class="subtitle">ملا المعلومات وتأكدي من طلبك عبر واتساب</p>
+
+            <div class="form-container">
+                <form id="orderForm" novalidate>
+                    <div class="form-group">
+                        <label for="name">الاسم الكامل</label>
+                        <input type="text" id="name" name="name" placeholder="الاسم واللقب" required />
+                        <span class="field-error" id="nameError">الرجاء إدخال الاسم الكامل</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" name="phone" placeholder="06XXXXXXXX" required />
+                        <span class="field-error" id="phoneError">رقم الهاتف غير صحيح (مثال: 0612345678)</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">المدينة</label>
+                        <input type="text" id="city" name="city" placeholder="مثال: الدارالبيضاء، فاس..." required />
+                        <span class="field-error" id="cityError">الرجاء إدخال اسم المدينة</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity">عدد الطلبات</label>
+                        <select id="quantity" name="quantity" required>
+                            <option value="1">مجموعة واحدة – 229 درهم</option>
+                            <option value="2">مجموعتين – 399 درهم</option>
+                            <option value="3">3 مجموعات – 599 درهم</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="btn-text">تأكيد الطلب</span>
+                        <span class="spinner"></span>
+                    </button>
+
+                    <div class="form-message" id="formMessage"></div>
+                    <div class="form-note">سيتم تأكيد طلبك عبر واتساب خلال 24 ساعة</div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-col">
+                    <div class="footer-brand">FREEZE</div>
+                    <p>حلول ذكية لتنظيم الدار والحفاظ على المساحة</p>
+                </div>
+                <div class="footer-col">
+                    <h4>تواصل معنا</h4>
+                    <a href="mailto:info@freezemorocco.com">📧 info@freezemorocco.com</a>
+                    <a href="https://wa.me/212691354018" target="_blank">📱 WhatsApp</a>
+                </div>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 FREEZE – جميع الحقوق محفوظة
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== STICKY CTA ===== -->
+    <div class="sticky-cta" id="stickyCta">
+        <span class="sticky-price">229 MAD</span>
+        <button class="sticky-btn" onclick="document.getElementById('order-form').scrollIntoView({ behavior: 'smooth' });">اطلب الآن</button>
+    </div>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        /* ===== CONFIG ===== */
+        const APPS_SCRIPT_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+        const WHATSAPP_NUMBER = "212691354018";
+        const PRICE_MAP = { 1: 229, 2: 399, 3: 599 };
+
+        /* ===== 1. FAQ ACCORDION ===== */
+        document.querySelectorAll('.faq-question').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var answer = this.nextElementSibling;
+                var icon = this.querySelector('.toggle-icon');
+                var isOpen = answer.classList.contains('open');
+
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+                document.querySelectorAll('.toggle-icon').forEach(i => i.classList.remove('open'));
+
+                if (!isOpen) {
+                    answer.classList.add('open');
+                    icon.classList.add('open');
+                }
+            });
+        });
+
+        /* ===== 2. STICKY CTA VISIBILITY ===== */
+        var stickyCta = document.getElementById('stickyCta');
+        var formSection = document.getElementById('order-form');
+
+        window.addEventListener('scroll', function () {
+            var formRect = formSection.getBoundingClientRect();
+            var isFormVisible = formRect.top < window.innerHeight && formRect.bottom > 0;
+            stickyCta.classList.toggle('hidden', isFormVisible);
+        });
+
+        /* ===== 3. ATTRIBUTION CAPTURE ===== */
+        function getAttribution() {
+            var params = new URLSearchParams(window.location.search);
+            return {
+                utm_source: params.get('utm_source') || sessionStorage.getItem('utm_source') || '',
+                utm_medium: params.get('utm_medium') || sessionStorage.getItem('utm_medium') || '',
+                utm_campaign: params.get('utm_campaign') || sessionStorage.getItem('utm_campaign') || '',
+                fbclid: params.get('fbclid') || sessionStorage.getItem('fbclid') || ''
+            };
+        }
+
+        Object.keys(getAttribution()).forEach(k => {
+            if (getAttribution()[k]) {
+                sessionStorage.setItem(k, getAttribution()[k]);
+            }
+        });
+
+        const attribution = getAttribution();
+
+        /* ===== 4. VALIDATION ===== */
+        function validatePhone(phone) {
+            return /^0[5-7]\d{8}$/.test(phone.replace(/\s/g, ''));
+        }
+
+        function setFieldError(input, errorId, hasError) {
+            input.classList.toggle('invalid', hasError);
+            document.getElementById(errorId).classList.toggle('show', hasError);
+        }
+
+        /* ===== 5. VIEW CONTENT TRACKING ===== */
+        fbq('track', 'ViewContent', {
+            content_name: 'FREEZE Home Care Pack',
+            content_ids: ['freeze-homecare'],
+            content_type: 'product',
+            value: 229,
+            currency: 'MAD'
+        });
+
+        /* ===== 6. CHECKOUT INITIATION ===== */
+        let checkoutTracked = false;
+        document.getElementById('orderForm').addEventListener('focusin', function () {
+            if (checkoutTracked) return;
+            checkoutTracked = true;
+            var qty = parseInt(document.getElementById('quantity').value, 10);
+            fbq('track', 'InitiateCheckout', {
+                value: PRICE_MAP[qty],
+                currency: 'MAD',
+                content_ids: ['freeze-homecare'],
+                content_type: 'product',
+                num_items: qty
+            });
+        });
+
+        /* ===== 7. WHATSAPP MESSAGE ===== */
+        function buildWhatsAppUrl(order) {
+            var msg = 'السلام عليكم FREEZE!%0A%0A';
+            msg += 'أريد طلب FREEZE Home Care Pack:%0A';
+            msg += 'الاسم: ' + encodeURIComponent(order.name) + '%0A';
+            msg += 'رقم الهاتف: ' + encodeURIComponent(order.phone) + '%0A';
+            msg += 'المدينة: ' + encodeURIComponent(order.city) + '%0A';
+            msg += 'الكمية: ' + encodeURIComponent(order.quantity) + '%0A';
+            msg += 'السعر الإجمالي: ' + order.price + ' درهم%0A%0A';
+            msg += 'أؤكد طلبي. ✅';
+            return 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + msg;
+        }
+
+        /* ===== 8. ORDER SUBMIT ===== */
+        document.getElementById('orderForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var nameEl = document.getElementById('name');
+            var phoneEl = document.getElementById('phone');
+            var cityEl = document.getElementById('city');
+            var qtyEl = document.getElementById('quantity');
+
+            var nameValid = !!nameEl.value.trim();
+            var phoneValid = validatePhone(phoneEl.value.trim());
+            var cityValid = !!cityEl.value.trim();
+
+            setFieldError(nameEl, 'nameError', !nameValid);
+            setFieldError(phoneEl, 'phoneError', !phoneValid);
+            setFieldError(cityEl, 'cityError', !cityValid);
+
+            if (!nameValid || !phoneValid || !cityValid) return;
+
+            var qty = parseInt(qtyEl.value);
+            var order = {
+                name: nameEl.value.trim(),
+                phone: phoneEl.value.trim(),
+                city: cityEl.value.trim(),
+                quantity: qty,
+                price: PRICE_MAP[qty],
+                currency: 'MAD',
+                page_url: window.location.href,
+                timestamp: new Date().toISOString(),
+                utm_source: attribution.utm_source,
+                utm_medium: attribution.utm_medium,
+                utm_campaign: attribution.utm_campaign,
+                fbclid: attribution.fbclid
+            };
+
+            document.getElementById('submitBtn').classList.add('loading');
+            document.getElementById('submitBtn').disabled = true;
+
+            /* Track purchase immediately */
+            fbq('track', 'Purchase', {
+                value: order.price,
+                currency: order.currency,
+                content_name: 'FREEZE Home Care Pack',
+                content_ids: ['freeze-homecare'],
+                content_type: 'product',
+                num_items: order.quantity
+            });
+
+            /* Redirect to WhatsApp */
+            setTimeout(function () {
+                var msgEl = document.getElementById('formMessage');
+                msgEl.className = 'form-message success';
+                msgEl.textContent = 'شكراً! جاري تحويلك إلى واتساب...';
+
+                setTimeout(function () {
+                    window.location.href = buildWhatsAppUrl(order);
+                }, 800);
+            }, 300);
+        });
+    </script>
+</body>
+</html>
